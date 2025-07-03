@@ -6,13 +6,13 @@ export function HeaderNavigationMenu() {
       <img
         src="/VictorMachado.svg"
         alt="VM"
-        className="w-[38px] h-[38px] cursor-grab transition-transform duration-300 hover:scale-115 hidden sm:block"
+        className="w-[38px] h-[38px] cursor-grabbing transition-transform duration-300 hover:scale-115 hidden sm:block"
       />
 
       <div className="flex-1 flex justify-center gap-8 text-[16px] font-normal">
         <Link
           href="/"
-          className="cursor-pointer hover:text-gray-400 transition-colors duration-300"
+          className="cursor-grabbing hover:text-gray-400 transition-colors duration-300"
         >
           Home
         </Link>
@@ -26,7 +26,7 @@ export function HeaderNavigationMenu() {
 
         <Link
           href="/blog"
-          className="cursor-pointer hover:text-gray-400 transition-colors duration-300"
+          className="cursor-grabbing hover:text-gray-400 transition-colors duration-300"
         >
           Blog
         </Link>
