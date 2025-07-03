@@ -29,9 +29,9 @@ export default function RootLayout({
         className={`${fontInter.variable} ${robotoMono.variable} antialiased cursor-grab`}
       >
         {/* Fundo fixo + gradiente */}
-        <div className="fixed top-0 left-0 w-screen h-1/2 z-[-1] pointer-events-none">
+        <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none">
           <div className="w-full h-full bg-[url('/backgroundImg.png')] bg-no-repeat bg-cover bg-center opacity-10" />
-          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-[#2C2C2C]/0 to-[#2C2C2C]" />
+          <div className="absolute bottom-0 left-0 w-full h-30 bg-gradient-to-b from-[#121212]/0 to-[#121212]" />
         </div>
 
         <div className="relative flex flex-col items-center min-h-screen mx-4">
