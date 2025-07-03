@@ -21,13 +21,13 @@ export default function About() {
               href="https://x.com/namevug"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-gray-400 transition-colors duration-300"
+              className="hover:underline hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
             >
               X
             </a>
             <a
               href="mailto:ciavug@gmail.com"
-              className="hover:underline hover:text-gray-400 transition-colors duration-300"
+              className="hover:underline hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
             >
               Email
             </a>
@@ -35,7 +35,7 @@ export default function About() {
               href="https://github.com/ciavhugo"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-gray-400 transition-colors duration-300"
+              className="hover:underline hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
             >
               GitHub
             </a>
@@ -61,7 +61,7 @@ export default function About() {
                   href="https://github.com/CodeTheFato"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#A1A09A] hover:text-gray-400 transition-colors duration-300 no-underline"
+                  className="text-[#A1A09A] hover:text-gray-400 transition-colors duration-300 no-underline cursor-grabbing"
                 >
                   Cothefato.
                 </a>
@@ -88,7 +88,7 @@ export default function About() {
                   href="https://www.instagram.com/vugcollection/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#A1A09A] hover:text-gray-400 transition-colors duration-300 no-underline"
+                  className="text-[#A1A09A] hover:text-gray-400 transition-colors duration-300 no-underline cursor-grabbing"
                 >
                   Vug Collection*
                 </a>
@@ -104,7 +104,7 @@ export default function About() {
             <a
               href="https://nextjs.org/"
               rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors duration-300"
+              className="hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
             >
               Next Js
             </a>
@@ -112,7 +112,7 @@ export default function About() {
             <a
               href="https://tailwindcss.com/"
               rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors duration-300"
+              className="hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
             >
               Tailwind
             </a>
