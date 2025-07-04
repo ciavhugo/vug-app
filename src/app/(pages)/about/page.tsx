@@ -20,7 +20,7 @@ export default function About() {
   return (
     <section className="w-full max-w-[700px] mx-auto min-h-screen flex flex-col mt-28">
       {/* About me */}
-      <section className="flex gap-12 max-[630px]:text-[14px]">
+      <section className="flex gap-12 max-[650px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Sobre</h1>
         <div>
           <h1 className="font-medium">Victor Hugo Machado</h1>
@@ -35,7 +35,7 @@ export default function About() {
       </section>
 
       {/* Connect */}
-      <section className="flex gap-12 mt-20 max-[630px]:text-[14px]">
+      <section className="flex gap-12 mt-20 max-[650px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Conectar</h1>
         <div className="flex gap-6 max-w-[485px]">
           <a
@@ -64,7 +64,7 @@ export default function About() {
       </section>
 
       {/* Work */}
-      <section className="flex gap-12 mt-20 max-[630px]:text-[14px]">
+      <section className="flex gap-12 mt-20 max-[650px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Emprego</h1>
         <div className="max-w-[485px]">
           <p>
@@ -85,7 +85,7 @@ export default function About() {
       </section>
 
       {/* Side projects */}
-      <section className="flex gap-12 mt-20 max-[630px]:text-[14px]">
+      <section className="flex gap-12 mt-20 max-[650px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Marca</h1>
         <div className="max-w-[485px]">
           <p>
@@ -104,7 +104,7 @@ export default function About() {
       </section>
 
       {/* Build */}
-      <section className="flex gap-12 mt-20 max-[630px]:text-[14px] mb-16 max-[600px]:mb-24">
+      <section className="flex gap-12 mt-20 max-[650px]:text-[14px] mb-16 max-[600px]:mb-24">
         <h1 className="w-24 text-[#A1A09A]">Feito com</h1>
         <div className="flex gap-6 max-w-[485px]">
           <a
