@@ -36,7 +36,7 @@ export default function RootLayout({
         </div>
 
         <ClientCursorWrapper>
-          <div className="relative flex flex-col items-center min-h-screen mx-4">
+          <div className="relative flex flex-col items-center min-h-screen mx-6 sm:mx-4">
             <HeaderNavigationMenu />
             {children}
           </div>
