@@ -42,6 +42,8 @@ export default function RootLayout({
           </div>
         </ClientCursorWrapper>
 
+        {/* <div className="h-6 opacity-0 pointer-events-none" /> */}
+
         <footer className="w-full text-center py-2 text-sm text-gray-600">
           © {new Date().getFullYear()} —{" "}
           <span className="hover:text-gray-500 transition-colors duration-200 font-medium cursor-grab">
