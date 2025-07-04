@@ -19,7 +19,7 @@ export function HeaderNavigationMenu() {
         className="w-[41px] h-[41px] hidden sm:block"
       />
 
-      <div className="flex-1 flex justify-center gap-8 text-[16px] font-normal">
+      <div className="flex-1 flex justify-center gap-8 text-[16px] max-[550px]:text-[14px]  font-normal">
         <Link href="/" className={getNavLink("/")}>
           Início
         </Link>
