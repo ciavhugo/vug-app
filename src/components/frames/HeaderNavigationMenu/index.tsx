@@ -1,33 +1,33 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function HeaderNavigationMenu() {
+  const pathname = usePathname();
+
+  const getNavLink = (path: string, cursorClass = "cursor-grabbing") =>
+    `${cursorClass} transition-colors duration-300 ${
+      pathname === path ? "text-gray-400" : "hover:text-gray-400"
+    }`;
+
   return (
     <section className="bg-[#D9D9D9]/15 w-full max-w-[700px] h-[50px] rounded-md mt-7 flex items-center justify-center px-3">
       <img
         src="/VictorMachado.svg"
         alt="VM"
-        className="w-[38px] h-[38px] cursor-grabbing transition-transform duration-300 hover:scale-115 hidden sm:block"
+        className="w-[41px] h-[41px] hidden sm:block"
       />
 
       <div className="flex-1 flex justify-center gap-8 text-[16px] font-normal">
-        <Link
-          href="/"
-          className="cursor-grabbing hover:text-gray-400 transition-colors duration-300"
-        >
-          Home
+        <Link href="/" className={getNavLink("/")}>
+          Início
         </Link>
 
-        <Link
-          href="/about"
-          className="cursor-help  hover:text-gray-400 transition-colors duration-300"
-        >
-          About
+        <Link href="/about" className={getNavLink("/about", "cursor-help")}>
+          Sobre
         </Link>
-
-        <Link
-          href="/blog"
-          className="cursor-grabbing hover:text-gray-400 transition-colors duration-300"
-        >
+        <Link href="/blog" className={getNavLink("/blog")}>
           Blog
         </Link>
       </div>
