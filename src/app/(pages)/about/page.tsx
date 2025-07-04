@@ -1,10 +1,26 @@
+"use client";
+
 import { WorkCard } from "@/components/frames/WorkCard";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsSmallScreen(window.innerWidth < 550);
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="w-full max-w-[700px] mx-auto min-h-screen flex flex-col mt-28">
       {/* About me */}
-      <section className="flex gap-12">
+      <section className="flex gap-12 max-[630px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Sobre</h1>
         <div>
           <h1 className="font-medium">Victor Hugo Machado</h1>
@@ -19,7 +35,7 @@ export default function About() {
       </section>
 
       {/* Connect */}
-      <section className="flex gap-12 mt-20">
+      <section className="flex gap-12 mt-20 max-[630px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Conectar</h1>
         <div className="flex gap-6 max-w-[485px]">
           <a
@@ -48,11 +64,15 @@ export default function About() {
       </section>
 
       {/* Work */}
-      <section className="flex gap-12 mt-20">
+      <section className="flex gap-12 mt-20 max-[630px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Emprego</h1>
         <div className="max-w-[485px]">
-          <p>2+ Anos de experiência trabalhando em design e desenvolvimento.</p>
-          
+          <p>
+            {isSmallScreen
+              ? "2+ Anos trabalhando em desenvolvimento."
+              : "2+ Anos de experiência trabalhando em design e desenvolvimento."}
+          </p>
+
           <WorkCard
             imageUrl="Cothefato.svg"
             role="Frontend Developer"
@@ -65,22 +85,26 @@ export default function About() {
       </section>
 
       {/* Side projects */}
-      <section className="flex gap-12 mt-20">
+      <section className="flex gap-12 mt-20 max-[630px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Marca</h1>
         <div className="max-w-[485px]">
-          <p>Experiência trabalhando em design de moda.</p>
+          <p>
+            {isSmallScreen
+              ? "Experiência com moda."
+              : "Experiência trabalhando em design de moda."}
+          </p>
+
           <WorkCard
             imageUrl="VugCollection.svg"
             role="Fashion Design"
             company="Vug Collection*"
             companyUrl="https://www.instagram.com/vugcollection/"
           />
-          
         </div>
       </section>
 
       {/* Build */}
-      <section className="flex gap-12 mt-20">
+      <section className="flex gap-12 mt-20 max-[630px]:text-[14px] mb-16 max-[600px]:mb-24">
         <h1 className="w-24 text-[#A1A09A]">Feito com</h1>
         <div className="flex gap-6 max-w-[485px]">
           <a
