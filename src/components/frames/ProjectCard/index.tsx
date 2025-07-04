@@ -20,16 +20,15 @@ export function ProjectCard({
   return (
     <section className="project-card">
       <div className="flex gap-8">
-        <h1 className="w-24 text-[#A1A09A]">
+        <h1 className="w-24 text-[#A1A09A] max-[606px]:text-[14px] max-[532px]:text-[12px]">
           {finalDate ? `${initialDate} - ${finalDate}` : initialDate}
         </h1>
         <div>
-          <h1 className="font-medium">{title}</h1>
-          <p className="max-w-[485px] text-[#A1A09A] ">
+          <h1 className="font-medium max-[606px]:text-[14px]">{title}</h1>
+          <p className="text-[#A1A09A] max-w-[485px] max-[600px]:max-w-[360px] max-[606px]:text-[14px]">
             {description}
           </p>
-
-          <div className="flex gap-6 mt-4 mb-2.5 text-[14px] ml-1.5">
+          <div className="flex gap-6 mt-4 mb-2.5 text-[14px] max-[606px]:text-[12px] ml-1.5">
             {projectLink && (
               <a
                 href={projectLink}
@@ -51,11 +50,20 @@ export function ProjectCard({
               </a>
             )}
           </div>
-
           <img
             src={imageUrl}
             alt={title}
-            className="w-full h-full max-w-[500px] max-h-[280px] rounded-2xl"
+            className="
+    w-full 
+    h-auto 
+    max-w-[500px] 
+    max-h-[280px] 
+    rounded-2xl 
+    sm:max-w-[460px] 
+    max-[640px]:max-w-[400px] 
+    max-[480px]:max-w-[320px] 
+    max-[360px]:max-w-[280px]
+"
           />
         </div>
       </div>
