@@ -23,7 +23,7 @@ export default function Home() {
         <p className="max-[550px]:text-[14px]">Selected project</p>
       </div>
 
-      <div className="projectCard-div flex flex-col gap-10">
+      <div className="projectCard-div flex flex-col gap-10 mb-16 max-[600px]:mb-24">
         <ProjectCard
           initialDate={"2023"}
           finalDate={"2024"}
