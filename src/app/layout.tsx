@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontInter.variable} ${robotoMono.variable} antialiased`}
+        className={`${fontInter.variable} ${robotoMono.variable} antialiased select-none  [user-select:none] [webkit-user-drag:none]`}
       >
         {/* Fundo fixo + gradiente */}
         <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none">
