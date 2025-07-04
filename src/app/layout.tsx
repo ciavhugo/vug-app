@@ -31,7 +31,19 @@ export default function RootLayout({
       >
         {/* Fundo fixo + gradiente */}
         <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none">
-          <div className="w-full h-full bg-[url('/backgroundImg.png')] bg-no-repeat bg-cover bg-center opacity-10" />
+          <div
+            className="
+      w-full h-full 
+      bg-[url('/backgroundImg.png')] 
+      bg-no-repeat 
+      bg-cover 
+      bg-center
+      max-[768px]:bg-[position:center_top_30%]
+      max-[600px]:bg-[position:center_top_50%]
+      max-[480px]:bg-[position:center_top_65%]
+      opacity-10
+    "
+          />
           <div className="absolute bottom-0 left-0 w-full h-30 bg-gradient-to-b from-[#121212]/0 to-[#121212]" />
         </div>
 
@@ -44,7 +56,7 @@ export default function RootLayout({
 
         {/* <div className="h-6 opacity-0 pointer-events-none" /> */}
 
-        <footer className="w-full text-center py-2 text-sm text-gray-600">
+        <footer className="w-full text-center py-2 text-sm max-[600px]:text-[12px] text-gray-600">
           © {new Date().getFullYear()} —{" "}
           <span className="hover:text-gray-500 transition-colors duration-200 font-medium cursor-grab">
             Vug*
