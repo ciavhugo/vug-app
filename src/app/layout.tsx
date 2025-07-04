@@ -26,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontInter.variable} ${robotoMono.variable} antialiased`}>
+      <body
+        className={`${fontInter.variable} ${robotoMono.variable} antialiased`}
+      >
         {/* Fundo fixo + gradiente */}
         <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none">
           <div className="w-full h-full bg-[url('/backgroundImg.png')] bg-no-repeat bg-cover bg-center opacity-10" />
@@ -39,6 +41,14 @@ export default function RootLayout({
             {children}
           </div>
         </ClientCursorWrapper>
+
+        <footer className="w-full text-center py-2 text-sm text-gray-600">
+          © {new Date().getFullYear()} —{" "}
+          <span className="hover:text-gray-500 transition-colors duration-200 font-medium cursor-grab">
+            Vug*
+          </span>{" "}
+          Todos os direitos reservados.
+        </footer>
       </body>
     </html>
   );
