@@ -75,7 +75,7 @@ export default function About() {
 
           <WorkCard
             imageUrl="Cothefato.svg"
-            role="Frontend Developer"
+            role={isSmallScreen ? "Dev Frontend" : "Frontend Developer"}
             company="Cothefato."
             companyUrl="https://github.com/CodeTheFato"
             initialDate="2023"

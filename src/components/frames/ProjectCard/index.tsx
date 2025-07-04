@@ -20,9 +20,12 @@ export function ProjectCard({
   return (
     <section className="project-card">
       <div className="flex gap-8">
-        <h1 className="w-24 text-[#A1A09A] max-[606px]:text-[14px] max-[532px]:text-[12px]">
-          {finalDate ? `${initialDate} - ${finalDate}` : initialDate}
-        </h1>
+        <div className="w-24 text-[#A1A09A] text-sm max-[606px]:text-[14px] max-[532px]:text-[12px] max-[532px]:flex max-[532px]:flex-col max-[532px]:items-start">
+          <span>{initialDate}</span>
+          {finalDate && <span className="mx-1">—</span>}
+          {finalDate && <span>{finalDate}</span>}
+        </div>
+
         <div>
           <h1 className="font-medium max-[606px]:text-[14px]">{title}</h1>
           <p className="text-[#A1A09A] max-w-[485px] max-[600px]:max-w-[360px] max-[606px]:text-[14px]">

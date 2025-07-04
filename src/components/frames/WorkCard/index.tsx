@@ -20,9 +20,9 @@ export function WorkCard({
       <img
         src={`/${imageUrl}`}
         alt={company}
-        className="w-12 h-12 object-contain rounded-full"
+        className="w-[42px] h-[42px] object-contain rounded-full max-[650px]:w-[32px] max-[650px]:h-[32px]"
       />
-      
+
       <div className="flex flex-col">
         <p>{role}</p>
         {companyUrl ? (
@@ -40,9 +40,11 @@ export function WorkCard({
       </div>
 
       {(initialDate || finalDate) && (
-        <p className="text-sm ml-auto text-[#A1A09A]">
-          {initialDate} {finalDate ? `— ${finalDate}` : ""}
-        </p>
+        <div className="ml-auto text-sm text-[#A1A09A] max-[550px]:text-[12px] max-[550px]:flex max-[550px]:flex-col max-[550px]:items-end">
+          <span>{initialDate}</span>
+          {finalDate && <span className="mx-1">—</span>}
+          {finalDate && <span>{finalDate}</span>}
+        </div>
       )}
     </div>
   );
