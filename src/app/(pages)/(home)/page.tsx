@@ -20,7 +20,7 @@ export default function Home() {
           alt="asterisk"
           className="w-2 h-2 animate-spin "
         />
-        <p className="max-[550px]:text-[14px]">Selected project</p>
+        <p className="max-[550px]:text-[14px]">Selecionar projetos</p>
       </div>
 
       <div className="projectCard-div flex flex-col gap-10 mb-16 max-[600px]:mb-24">
