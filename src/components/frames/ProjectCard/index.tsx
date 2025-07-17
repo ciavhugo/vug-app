@@ -20,7 +20,7 @@ export function ProjectCard({
   return (
     <section className="project-card">
       <div className="flex gap-8">
-        <div className="w-24 text-[#A1A09A] text-sm max-[606px]:text-[14px] max-[532px]:text-[12px] max-[532px]:flex max-[532px]:flex-col max-[532px]:items-start">
+        <div className="w-24 text-[#A1A09A] text-sm max-[606px]:text-[14px] max-[532px]:text-[12px] max-[532px]:flex max-[532px]:flex-col max-[532px]:items-start hover:text-[#EDEDEC] transition-colors duration-[1000ms]">
           <span>{initialDate}</span>
           {finalDate && <span className="mx-1">—</span>}
           {finalDate && <span>{finalDate}</span>}
