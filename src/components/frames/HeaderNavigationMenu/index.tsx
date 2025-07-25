@@ -12,7 +12,7 @@ export function HeaderNavigationMenu() {
     }`;
 
   return (
-    <section className="bg-[#D9D9D9]/15 w-full max-w-[700px] h-[50px] rounded-md mt-7 flex items-center justify-center px-3">
+    <section className="bg-[#D9D9D9]/15 w-full max-w-[705px] h-[50px] rounded-md mt-4 flex items-center justify-center px-3">
       <img
         src="/VictorMachado.svg"
         alt="VM"

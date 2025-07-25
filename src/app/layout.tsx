@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${fontInter.variable} ${robotoMono.variable} antialiased select-none  [user-select:none] [webkit-user-drag:none]`}
       >
         {/* Fundo fixo + gradiente */}
-        <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none">
+        <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none max-[429px]:hidden">
           <div
             className="
       w-full h-full 
@@ -48,8 +48,11 @@ export default function RootLayout({
         </div>
 
         <ClientCursorWrapper>
-          <div className="relative flex flex-col items-center min-h-screen mx-6 sm:mx-4">
+          <div className="fixed top-0 left-0 w-full z-10 backdrop-blur-md flex justify-center px-4">
             <HeaderNavigationMenu />
+          </div>
+
+          <div className="relative flex flex-col items-center min-h-screen mx-6 sm:mx-4">
             {children}
           </div>
         </ClientCursorWrapper>
