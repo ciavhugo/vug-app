@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { HeaderNavigationMenu } from "@/components/frames/HeaderNavigationMenu";
-import { ClientCursorWrapper } from "@/components/frames/ClientCursorWrapper";
 
 const fontInter = Inter({
   variable: "--font-inter",
