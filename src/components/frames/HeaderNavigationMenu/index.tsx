@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export function HeaderNavigationMenu() {
   const pathname = usePathname();
 
-  const getNavLink = (path: string, cursorClass = "cursor-grabbing") =>
+  const getNavLink = (path: string, cursorClass = "cursor-pointer") =>
     `${cursorClass} transition-colors duration-300 ${
       pathname === path ? "text-gray-400" : "hover:text-gray-400"
     }`;

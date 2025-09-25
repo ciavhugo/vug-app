@@ -1,16 +1,12 @@
-import Link from "next/link"
-import {
-  BlogPostCard,
-  PageContainer,
-} from "@/components"
+import Link from "next/link";
 import {
   generateNotionPageSlug,
   getDatabaseItems,
   parseDateDisplay,
   richTextRender,
-} from "@/lib/notion"
-import "./style.scss"
-import type { PostProps } from "@/types/notion.type"
+} from "@/lib/notion";
+import { PageContainer, BlogPostCard } from "@/components";
+import type { PostProps } from "@/types/notion.type";
 
 export default async function PostsPage() {
   const { results } = await getDatabaseItems<PostProps>({
@@ -19,39 +15,29 @@ export default async function PostsPage() {
       { property: "Criado Em", direction: "descending" },
     ],
     where: {
-      and: [
-        { property: "Publicado Em", type: "date", op: "is_not_empty" },
-      ],
+      and: [{ property: "Publicado Em", type: "date", op: "is_not_empty" }],
     },
-  })
+  });
 
   return (
-    <PageContainer className="posts-page">
-      <section className="posts-page__header">
-        <div>
-          <h1>
-            Todas as Postagens
-          </h1>
+    <PageContainer className="flex flex-col items-center gap-20 px-6 py-20 w-full max-w-[705px]">
+      {/* Header */}
+      <section className="flex flex-col gap-12 text-center max-w-2xl">
+        <h1 className="text-3xl font-semibold">Todas as Postagens</h1>
 
-          {/* <Paragraph>
-            0 Postagens
-          </Paragraph> */}
-        </div>
-
-        {/* <Paragraph>
-          Aqui vai ser um paragrafo com um sobre, uma introdução
-        </Paragraph> */}
+        {/* <p className="text-gray-500">Aqui vai ser um parágrafo com introdução</p> */}
       </section>
 
-      <section className="posts-page__content">
+      {/* Content */}
+      <section className="flex w-full flex-col gap-10">
         {results.map((item) => {
-          const title = richTextRender(item.properties.Nome.title)
-          const description = richTextRender(item.properties.Descricao.rich_text)
-          const tags = item.properties.Tags.multi_select
-          const publishedIn = item.properties["Publicado Em"].date?.start as string
+          const title = richTextRender(item.properties.Nome.title);
+          const description = richTextRender(item.properties.Descricao.rich_text);
+          const tags = item.properties.Tags.multi_select;
+          const publishedIn = item.properties["Publicado Em"].date?.start as string;
 
-          const slug = generateNotionPageSlug(item.url)
-          const dateDisplay = parseDateDisplay(publishedIn)
+          const slug = generateNotionPageSlug(item.url);
+          const dateDisplay = parseDateDisplay(publishedIn);
 
           return (
             <Link key={item.id} href={`blog/${slug}`}>
@@ -62,9 +48,9 @@ export default async function PostsPage() {
                 tags={tags}
               />
             </Link>
-          )
+          );
         })}
       </section>
     </PageContainer>
-  )
+  );
 }

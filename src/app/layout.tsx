@@ -46,16 +46,14 @@ export default function RootLayout({
           />
           <div className="absolute bottom-0 left-0 w-full h-30 bg-gradient-to-b from-[#121212]/0 to-[#121212]" />
         </div>
-
-        <ClientCursorWrapper>
+        
           <div className="fixed top-0 left-0 w-full z-10 backdrop-blur-md flex justify-center px-4">
             <HeaderNavigationMenu />
           </div>
 
           <div className="relative flex flex-col items-center min-h-screen mx-6 sm:mx-4">
             {children}
-          </div>
-        </ClientCursorWrapper>
+          </div>   
 
         {/* <div className="h-6 opacity-0 pointer-events-none" /> */}
 

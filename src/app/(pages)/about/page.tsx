@@ -42,13 +42,13 @@ export default function About() {
             href="https://x.com/namevug"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
+            className="hover:underline hover:text-gray-400 transition-colors duration-300"
           >
             X
           </a>
           <a
             href="mailto:ciavug@gmail.com"
-            className="hover:underline hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
+            className="hover:underline hover:text-gray-400 transition-colors duration-300"
           >
             Email
           </a>
@@ -56,7 +56,7 @@ export default function About() {
             href="https://github.com/ciavhugo"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
+            className="hover:underline hover:text-gray-400 transition-colors duration-300"
           >
             GitHub
           </a>
@@ -110,7 +110,7 @@ export default function About() {
           <a
             href="https://nextjs.org/"
             rel="noopener noreferrer"
-            className="hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
+            className="hover:text-gray-400 transition-colors duration-300"
           >
             Next Js
           </a>
@@ -118,7 +118,7 @@ export default function About() {
           <a
             href="https://tailwindcss.com/"
             rel="noopener noreferrer"
-            className="hover:text-gray-400 transition-colors duration-300 cursor-grabbing"
+            className="hover:text-gray-400 transition-colors duration-300"
           >
             Tailwind
           </a>

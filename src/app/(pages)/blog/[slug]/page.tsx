@@ -13,7 +13,6 @@ import {
   parseDateDisplay,
   richTextRender,
 } from "@/lib/notion"
-import "./style.scss"
 import type { PostProps } from "@/types/notion.type"
 
 interface PostPageProps {
@@ -27,16 +26,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
   if (typeof slug !== "string") {
     return (
-      <PageContainer className="post-page">
-        <section className="post-page__header">
-          <div className="post-page__header__title">
-            <Heading as="h1">
-              Ops!
-            </Heading>
-
-            <Paragraph>
-              Não foi possível carregar a página
-            </Paragraph>
+      <PageContainer className="flex flex-col items-center gap-20 px-6 py-20">
+        <section className="flex flex-col items-center gap-6 max-w-2xl text-center">
+          <div className="flex flex-col items-center gap-4">
+            <Heading as="h1">Ops!</Heading>
+            <Paragraph>Não foi possível carregar a página</Paragraph>
           </div>
         </section>
       </PageContainer>
@@ -44,21 +38,15 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const pageId = generateNotionPageID(slug)
-
   const page = await getPageById<PostProps>(pageId)
 
   if (!page) {
     return (
-      <PageContainer className="post-page">
-        <section className="post-page__header">
-          <div className="post-page__header__title">
-            <Heading as="h1">
-              Ops!
-            </Heading>
-
-            <Paragraph>
-              Não foi possível carregar a página
-            </Paragraph>
+      <PageContainer className="flex flex-col items-center gap-20 px-6 py-20">
+        <section className="flex flex-col items-center gap-6 max-w-2xl text-center">
+          <div className="flex flex-col items-center gap-4">
+            <Heading as="h1">Ops!</Heading>
+            <Paragraph>Não foi possível carregar a página</Paragraph>
           </div>
         </section>
       </PageContainer>
@@ -74,26 +62,21 @@ export default async function PostPage({ params }: PostPageProps) {
   const blocks = await getAllBlockChildren(pageId, { deep: true })
 
   return (
-    <PageContainer className="post-page">
-      <section className="post-page__header">
-        <Span>
-          {dateDisplay}
-        </Span>
+    <PageContainer className="flex flex-col items-center gap-20 px-6 py-20">
+      {/* Header */}
+      <section className="flex flex-col items-center gap-6 max-w-2xl text-center">
+        <Span>{dateDisplay}</Span>
 
-        <div className="post-page__header__title">
-          <Heading as="h1">
-            {title}
-          </Heading>
-
-          <Paragraph>
-            {description}
-          </Paragraph>
+        <div className="flex flex-col items-center gap-4">
+          <Heading as="h1">{title}</Heading>
+          <Paragraph>{description}</Paragraph>
         </div>
 
         <Tags items={tags.map(t => t.name)} />
       </section>
 
-      <section className="post-page__content">
+      {/* Content */}
+      <section className="flex flex-col gap-4 max-w-3xl w-full select-text">
         <PageRenderer blocks={blocks} />
       </section>
     </PageContainer>

@@ -37,7 +37,7 @@ export function ProjectCard({
                 href={projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-grabbing hover:text-gray-400 transition-colors duration-300"
+                className="hover:text-gray-400 transition-colors duration-300"
               >
                 Acessar
               </a>
@@ -47,7 +47,7 @@ export function ProjectCard({
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-grabbing hover:text-gray-400 transition-colors duration-300"
+                className="hover:text-gray-400 transition-colors duration-300"
               >
                 GitHub
               </a>

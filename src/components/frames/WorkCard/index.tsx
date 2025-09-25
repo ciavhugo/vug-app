@@ -30,7 +30,7 @@ export function WorkCard({
             href={companyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#A1A09A] hover:text-gray-400 transition-colors duration-300 no-underline cursor-grabbing"
+            className="text-[#A1A09A] hover:text-gray-400 transition-colors duration-300 no-underline cursor-pointer"
           >
             {company}
           </a>
