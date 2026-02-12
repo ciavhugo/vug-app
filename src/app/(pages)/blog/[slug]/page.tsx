@@ -21,6 +21,8 @@ interface PostPageProps {
   }>
 }
 
+export const dynamic = "force-dynamic"; /* testando problema com cache vercel */
+
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params
 
