@@ -5,6 +5,7 @@ import {
   Span,
   Tags,
 } from "@/components"
+import { connection } from "next/server"
 import {
   PageRenderer,
   generateNotionPageID,
@@ -23,8 +24,11 @@ interface PostPageProps {
 
 // The post content comes from Notion, so this page should be rendered on demand on Vercel.
 export const dynamic = "force-dynamic"
+export const revalidate = 0
 
 export default async function PostPage({ params }: PostPageProps) {
+  await connection()
+
   const { slug } = await params
 
   if (typeof slug !== "string") {

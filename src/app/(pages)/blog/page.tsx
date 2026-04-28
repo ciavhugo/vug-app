@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import {
   generateNotionPageSlug,
   getDatabaseItems,
@@ -10,8 +11,11 @@ import type { PostProps } from "@/types/notion.type";
 
 // The blog content comes from Notion, so this page should be rendered on demand on Vercel.
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function PostsPage() {
+  await connection();
+
   const { results } = await getDatabaseItems<PostProps>({
     sorts: [
       { property: "Publicado Em", direction: "descending" },
