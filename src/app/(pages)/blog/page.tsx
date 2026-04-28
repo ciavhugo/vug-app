@@ -8,7 +8,8 @@ import {
 import { PageContainer, BlogPostCard } from "@/components";
 import type { PostProps } from "@/types/notion.type";
 
-// export const dynamic = "force-dynamic"; /* testando problema com cache vercel */
+// The blog content comes from Notion, so this page should be rendered on demand on Vercel.
+export const dynamic = "force-dynamic";
 
 export default async function PostsPage() {
   const { results } = await getDatabaseItems<PostProps>({

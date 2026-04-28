@@ -21,7 +21,8 @@ interface PostPageProps {
   }>
 }
 
-// export const dynamic = "force-dynamic"; /* testando problema com cache vercel */
+// The post content comes from Notion, so this page should be rendered on demand on Vercel.
+export const dynamic = "force-dynamic"
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params
