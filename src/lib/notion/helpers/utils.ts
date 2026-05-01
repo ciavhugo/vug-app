@@ -1,13 +1,19 @@
 export const generateNotionPageSlug = (string: string) => {
-  const replace = string.replace("https://www.notion.so/", "")
-  return replace
+  try {
+    const url = new URL(string)
+    const pathname = url.pathname.split("/").filter(Boolean).pop()
+
+    return pathname ?? string
+  } catch {
+    return string
+  }
 }
 
 export const generateNotionPageID = (slug: string) => {
-  const start = slug.lastIndexOf("-") + 1
-  const end = slug.length
-  const pageId = slug.slice(start, end)
-  return pageId
+  const cleanSlug = slug.split("?")[0].split("#")[0]
+  const pageId = cleanSlug.match(/[0-9a-fA-F]{32}$/)?.[0]
+
+  return pageId ?? cleanSlug
 }
 
 export const parseDateDisplay = <T extends string | undefined>(dateString: T, timeZone = "UTC"): T extends string ? string : undefined => {

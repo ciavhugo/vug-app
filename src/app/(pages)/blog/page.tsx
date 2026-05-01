@@ -47,7 +47,7 @@ export default async function PostsPage() {
           const dateDisplay = parseDateDisplay(publishedIn);
 
           return (
-            <Link key={item.id} href={`blog/${slug}`}>
+            <Link key={item.id} href={`/blog/${slug}`}>
               <BlogPostCard
                 title={title}
                 description={description}
