@@ -1,36 +1,56 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function HeaderNavigationMenu() {
   const pathname = usePathname();
 
-  const getNavLink = (path: string, cursorClass = "cursor-pointer") =>
-    `${cursorClass} transition-colors duration-300 ${
-      pathname === path ? "text-gray-400" : "hover:text-gray-400"
-    }`;
+  const links = [
+    { href: "/", label: "Início", cursorClass: "cursor-pointer" },
+    { href: "/about", label: "Sobre", cursorClass: "cursor-help" },
+    { href: "/blog", label: "Blog", cursorClass: "cursor-pointer" },
+  ];
 
   return (
-    <section className="bg-[#D9D9D9]/15 w-full max-w-[805px] h-[60px] rounded-md mt-4 flex items-center justify-center px-3">
-      <img
-        src="/VictorMachado.svg"
-        alt="VM"
-        className="w-[48px] h-[48px] hidden sm:block"
-      />
+    <section className="relative mt-4 flex h-[60px] w-full max-w-[805px] items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] px-4 backdrop-blur-md">
+      <Link
+        href="/"
+        aria-label="Ir para a página inicial"
+        className="relative hidden h-12 w-12 shrink-0 items-center justify-center sm:flex"
+      >
+        <Image
+          src="/VictorMachado.svg"
+          alt="VM"
+          width={48}
+          height={48}
+          className="h-12 w-12"
+          priority
+        />
+      </Link>
 
-      <div className="flex-1 flex justify-center gap-8 text-[16px] max-[550px]:text-[14px]  font-normal">
-        <Link href="/" className={`${getNavLink("/")} uppercase`}>
-          Início
-        </Link>
+      <nav className="relative flex flex-1 items-center justify-center gap-2 text-[13px] font-normal uppercase max-[550px]:text-[12px] sm:ml-auto sm:flex-none sm:justify-end sm:gap-3">
+        {links.map(({ href, label, cursorClass }) => {
+          const isActive = pathname === href;
 
-        <Link href="/about" className={`${getNavLink("/about", "cursor-help")} uppercase`}>
-          Sobre
-        </Link>
-        <Link href="/blog" className={`${getNavLink("/blog")} uppercase`}>
-          Blog
-        </Link>
-      </div>
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={`${cursorClass} rounded-xl px-4 py-2 font-mono tracking-normal transition-all duration-300 ${
+                isActive
+                  ? "bg-white/[0.08] text-cyan-200 shadow-sm shadow-cyan-500/10"
+                  : "text-zinc-400 hover:bg-white/[0.05] hover:text-zinc-100"
+              }`}
+            >
+              {label}
+            </Link>
+          );
+        })}
+      </nav>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </section>
   );
 }

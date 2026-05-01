@@ -60,7 +60,11 @@ export default function RootLayout({
           className="fixed inset-0 z-[-1] bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[size:56px_56px] opacity-30 [mask-image:radial-gradient(ellipse_at_top,black_0%,transparent_70%)]"
         />
 
-        <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 [&>*]:pointer-events-auto [&>section]:backdrop-blur-md">
+        <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex h-24 justify-center px-4 [&>*]:pointer-events-auto">
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-full backdrop-blur-md [mask-image:linear-gradient(to_bottom,black_0%,black_74%,transparent_100%)]"
+          />
           <HeaderNavigationMenu />
         </header>
 
