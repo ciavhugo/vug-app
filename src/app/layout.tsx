@@ -25,17 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-TFKV7KDCV0"
         />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -44,38 +40,37 @@ export default function RootLayout({
           `}
         </Script>
       </head>
+
       <body
-        className={`${fontInter.variable} ${robotoMono.variable} antialiased select-none [user-select:none] [webkit-user-drag:none]`}
+        className={`${fontInter.variable} ${robotoMono.variable} min-h-screen overflow-x-hidden bg-[#0c0c0c] text-zinc-200 antialiased selection:bg-white selection:text-black select-none [user-select:none] [webkit-user-drag:none]`}
       >
-        {/* Fundo fixo + gradiente */}
-        <div className="fixed top-0 left-0 w-screen h-[40%] z-[-1] pointer-events-none max-[429px]:hidden">
-          <div
-            className="
-              w-full h-full 
-              bg-[url('/backgroundImg.png')] 
-              bg-no-repeat 
-              bg-cover 
-              bg-center
-              max-[768px]:bg-[position:center_top_30%]
-              max-[600px]:bg-[position:center_top_50%]
-              max-[480px]:bg-[position:center_top_65%]
-              opacity-10
-            "
-          />
-          <div className="absolute bottom-0 left-0 w-full h-30 bg-gradient-to-b from-[#0c0c0c]/0 to-[#0c0c0c]" />
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-[-2] overflow-hidden bg-[radial-gradient(circle_at_top,#18181b_0%,#0c0c0c_42%,#050505_100%)]"
+        >
+          <div className="absolute -top-36 -left-32 h-96 w-96 rounded-full bg-violet-500/20 blur-3xl" />
+          <div className="absolute -top-20 right-[-7rem] h-80 w-80 rounded-full bg-fuchsia-500/15 blur-3xl" />
+          <div className="absolute top-[15px] left-[38%] h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+          <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-white/[0.06] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#0c0c0c] to-transparent" />
         </div>
 
-        <div className="fixed top-0 left-0 w-full z-10 backdrop-blur-md flex justify-center px-4">
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-[-1] bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[size:56px_56px] opacity-30 [mask-image:radial-gradient(ellipse_at_top,black_0%,transparent_70%)]"
+        />
+
+        <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 [&>*]:pointer-events-auto [&>section]:backdrop-blur-md">
           <HeaderNavigationMenu />
-        </div>
+        </header>
 
-        <div className="relative flex flex-col items-center min-h-screen mx-6 sm:mx-4">
+        <main className="relative mx-6 flex min-h-screen flex-col items-center pt-24 sm:mx-4">
           {children}
-        </div>
+        </main>
 
-        <footer className="w-full text-center py-2 text-sm max-[600px]:text-[12px] text-gray-600">
+        <footer className="relative z-10 w-full border-t border-white/10 bg-[#0c0c0c]/70 py-3 text-center text-sm text-zinc-500 backdrop-blur-md max-[600px]:text-[12px]">
           © {new Date().getFullYear()} —{" "}
-          <span className="hover:text-gray-500 transition-colors duration-200 font-medium cursor-grab">
+          <span className="cursor-grab font-medium text-zinc-400 transition-colors duration-200 hover:text-zinc-200">
             Vug*
           </span>{" "}
           Todos os direitos reservados.
