@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         hostname: "app.notion.com",
         pathname: "/images/page-cover/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };
