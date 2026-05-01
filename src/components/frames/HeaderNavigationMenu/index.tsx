@@ -12,22 +12,22 @@ export function HeaderNavigationMenu() {
     }`;
 
   return (
-    <section className="bg-[#D9D9D9]/15 w-full max-w-[705px] h-[50px] rounded-md mt-4 flex items-center justify-center px-3">
+    <section className="bg-[#D9D9D9]/15 w-full max-w-[805px] h-[60px] rounded-md mt-4 flex items-center justify-center px-3">
       <img
         src="/VictorMachado.svg"
         alt="VM"
-        className="w-[41px] h-[41px] hidden sm:block"
+        className="w-[48px] h-[48px] hidden sm:block"
       />
 
       <div className="flex-1 flex justify-center gap-8 text-[16px] max-[550px]:text-[14px]  font-normal">
-        <Link href="/" className={getNavLink("/")}>
+        <Link href="/" className={`${getNavLink("/")} uppercase`}>
           Início
         </Link>
 
-        <Link href="/about" className={getNavLink("/about", "cursor-help")}>
+        <Link href="/about" className={`${getNavLink("/about", "cursor-help")} uppercase`}>
           Sobre
         </Link>
-        <Link href="/blog" className={getNavLink("/blog")}>
+        <Link href="/blog" className={`${getNavLink("/blog")} uppercase`}>
           Blog
         </Link>
       </div>

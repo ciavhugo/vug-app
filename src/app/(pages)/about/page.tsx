@@ -18,18 +18,18 @@ export default function About() {
   }, []);
 
   return (
-    <section className="w-full max-w-[700px] mx-auto min-h-screen flex flex-col mt-28">
+    <section className="w-full max-w-[800px] mx-auto min-h-screen flex flex-col mt-28">
       {/* About me */}
       <section className="flex gap-12 max-[650px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Sobre</h1>
         <div>
-          <h1 className="font-medium">Victor Hugo Machado</h1>
+          <h1 className="font-medium">VICTOR MACHADO</h1>
           <p className="max-w-[485px] font-light">
-            Nascido em São Paulo, 28 anos. Apaixonado por moda e tecnologia, sou
-            pai e profissional autônomo em constante evolução. Estudo Análise de
-            Sistemas por conta própria e utilizo este espaço para compartilhar
-            conhecimentos, projetos e, futuramente, reflexões sobre moda,
-            tecnologia e ideias que me inspiram.
+            Nascido em São Paulo, 29 anos. Apaixonado por moda e tecnologia, sou
+            pai e profissional autônomo na minha cidade. Neste espaço,
+            compartilho projetos, aprendizados e reflexões sobre moda e
+            tecnologia, guiado pelo meu processo de estudo em Análise de
+            Sistemas.
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function About() {
 
       {/* Work */}
       <section className="flex gap-12 mt-20 max-[650px]:text-[14px]">
-        <h1 className="w-24 text-[#A1A09A]">Emprego</h1>
+        <h1 className="w-24 text-[#A1A09A]">Projetos</h1>
         <div className="max-w-[485px]">
           <p>
             {isSmallScreen
@@ -109,6 +109,7 @@ export default function About() {
         <div className="flex gap-6 max-w-[485px]">
           <a
             href="https://nextjs.org/"
+            target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400 transition-colors duration-300"
           >
@@ -117,6 +118,7 @@ export default function About() {
 
           <a
             href="https://tailwindcss.com/"
+            target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-400 transition-colors duration-300"
           >

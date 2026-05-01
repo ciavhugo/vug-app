@@ -62,7 +62,7 @@ export default function RootLayout({
               opacity-10
             "
           />
-          <div className="absolute bottom-0 left-0 w-full h-30 bg-gradient-to-b from-[#121212]/0 to-[#121212]" />
+          <div className="absolute bottom-0 left-0 w-full h-30 bg-gradient-to-b from-[#0c0c0c]/0 to-[#0c0c0c]" />
         </div>
 
         <div className="fixed top-0 left-0 w-full z-10 backdrop-blur-md flex justify-center px-4">
