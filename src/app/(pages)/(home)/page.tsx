@@ -5,15 +5,13 @@ export default function Home() {
     <section className="w-full max-w-[800px] mx-auto">
       <div className="max-w-[580px] mt-7">
         <p className="font-medium text-[28px] max-[550px]:text-[16px]">
-          <span className="relative">
-          Victor Machado
-          
-            <span className="absolute -top-[-4px] -right-3 text-[10px]">
-              {" "}
+          <span className="relative inline-block">
+            Victor Machado
+            <span className="absolute -top-1 -right-4 max-[550px]:-top-0.5 max-[550px]:-right-2">
               <img
                 src="/asterisk.svg"
                 alt="asterisk"
-                className="w-3 h-3 animate-spin "
+                className="w-3 h-7 max-[550px]:w-2 max-[550px]:h-3 animate-spin"
               />
             </span>
           </span>
@@ -26,11 +24,7 @@ export default function Home() {
       </div>
 
       <div className="mt-14 mb-5 flex items-center gap-2">
-        <img
-          src="/asterisk.svg"
-          alt="asterisk"
-          className="w-2 h-2 "
-        />
+        {/* <img src="/asterisk.svg" alt="asterisk" className="w-2 h-2 " /> */}
         <p className="max-[550px]:text-[14px]">Selecionar projetos</p>
       </div>
 
