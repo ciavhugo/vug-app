@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { HeaderNavigationMenu } from "@/components/frames/HeaderNavigationMenu";
 import { ThemeToggle } from "@/components";
+import { ScrollToTop } from "@/components/frames/ScrollToTop";
 
 const fontInter = Inter({
   variable: "--font-inter",
@@ -86,13 +87,15 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="relative z-10 w-full border-t border-white/10 bg-[#0c0c0c]/70 py-3 text-center text-sm text-zinc-500 backdrop-blur-md max-[600px]:text-[12px] light:border-zinc-950/10 light:bg-white/45 light:text-zinc-600">
+        <footer className="relative z-10 w-full bg-[#0c0c0c]/70 py-3 text-center text-sm text-zinc-500 backdrop-blur-md max-[600px]:text-[12px] light:bg-white/45 light:text-zinc-600">
+          {" "}
           © {new Date().getFullYear()} —{" "}
           <span className="cursor-grab font-medium text-zinc-400 transition-colors duration-200 hover:text-zinc-200 light:text-zinc-800 light:hover:text-zinc-950">
             Vug*
           </span>{" "}
           Todos os direitos reservados.
         </footer>
+        <ScrollToTop />
       </body>
     </html>
   );
