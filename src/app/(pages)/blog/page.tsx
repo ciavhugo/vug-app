@@ -27,7 +27,7 @@ export default async function PostsPage() {
   });
 
   return (
-    <PageContainer className="flex flex-col items-center gap-20 px-6 py-20 w-full max-w-[705px]">
+    <PageContainer className="flex flex-col items-center gap-20 px-6 py-6 w-full max-w-[705px] ">
       {/* Header */}
       <section className="flex flex-col gap-12 text-center max-w-2xl">
         <h1 className="text-3xl font-semibold">Todas as Postagens</h1>
