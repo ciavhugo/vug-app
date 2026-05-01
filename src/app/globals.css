@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+@custom-variant light (&:where(.light, .light *));
+
 :root {
   --background: #0c0c0c;
   --foreground: #fafafa;
+}
+
+.light {
+  --background: #f6f4ef;
+  --foreground: #18181b;
 }
 
 @theme inline {
@@ -10,13 +17,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-roboto-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0c0c0c;
-    --foreground: #fafafa;
-  }
 }
 
 body {

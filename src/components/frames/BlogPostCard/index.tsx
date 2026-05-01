@@ -24,7 +24,7 @@ export function BlogPostCard({
   const imageAlt = typeof title === "string" ? title : "Imagem de capa do post";
 
   return (
-    <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-md transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/20 group-hover:bg-white/[0.06] group-hover:shadow-2xl group-hover:shadow-cyan-500/5">
+    <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-md transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/20 group-hover:bg-white/[0.06] group-hover:shadow-2xl group-hover:shadow-cyan-500/5 light:border-zinc-950/10 light:bg-white/55 light:group-hover:border-zinc-950/20 light:group-hover:bg-white/75 light:group-hover:shadow-cyan-500/10">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-violet-500/0 to-fuchsia-500/0 opacity-0 transition-all duration-500 group-hover:from-cyan-400/5 group-hover:via-violet-500/5 group-hover:to-fuchsia-500/5 group-hover:opacity-100" />
 
       <div className="relative h-48 w-full shrink-0 overflow-hidden border-b border-white/10">
@@ -47,13 +47,13 @@ export function BlogPostCard({
         <div>
           <div className="mb-4 flex items-start justify-between gap-3">
             {mainTag && (
-              <span className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-xs uppercase text-zinc-400">
+              <span className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-xs uppercase text-zinc-400 light:border-zinc-950/10 light:text-zinc-600">
                 {mainTag}
               </span>
             )}
 
             {date && (
-              <span className="shrink-0 rounded-md bg-white/[0.05] px-2.5 py-1 font-mono text-[10px] text-zinc-400">
+              <span className="shrink-0 rounded-md bg-white/[0.05] px-2.5 py-1 font-mono text-[10px] text-zinc-400 light:bg-zinc-950/[0.05] light:text-zinc-600">
                 {date}
               </span>
             )}
@@ -62,12 +62,12 @@ export function BlogPostCard({
           <Heading
             as="h3"
             size="2xl"
-            className="mb-3 font-bold tracking-tight text-zinc-100 transition-colors duration-500 group-hover:text-cyan-200"
+            className="mb-3 font-bold tracking-tight text-zinc-100 transition-colors duration-500 group-hover:text-cyan-200 light:text-zinc-950 light:group-hover:text-cyan-700"
           >
             {title}
           </Heading>
 
-          <Paragraph className="line-clamp-3 text-sm leading-7 text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">
+          <Paragraph className="line-clamp-3 text-sm leading-7 text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300 light:text-zinc-600 light:group-hover:text-zinc-800">
             {description}
           </Paragraph>
         </div>

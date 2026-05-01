@@ -55,8 +55,8 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
             href="/blog"
             className={
               !activeTag
-                ? "group relative rounded-xl bg-gradient-to-br from-white to-zinc-100 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-black shadow-lg shadow-white/20 transition-all duration-300"
-                : "group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white"
+                ? "group relative rounded-xl bg-gradient-to-br from-white to-zinc-100 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-black shadow-lg shadow-white/20 transition-all duration-300 light:from-zinc-950 light:to-zinc-800 light:text-white light:shadow-zinc-950/10"
+                : "group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white light:border-zinc-950/10 light:bg-white/35 light:text-zinc-600 light:hover:border-zinc-950/20 light:hover:bg-white/60 light:hover:text-zinc-950"
             }
           >
             <span className="relative">Todos</span>
@@ -71,8 +71,8 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
                 href={`/blog?tag=${encodeURIComponent(tag.name)}`}
                 className={
                   isActive
-                    ? "group relative rounded-xl bg-gradient-to-br from-white to-zinc-100 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-black shadow-lg shadow-white/20 transition-all duration-300"
-                    : "group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white"
+                    ? "group relative rounded-xl bg-gradient-to-br from-white to-zinc-100 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-black shadow-lg shadow-white/20 transition-all duration-300 light:from-zinc-950 light:to-zinc-800 light:text-white light:shadow-zinc-950/10"
+                    : "group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white light:border-zinc-950/10 light:bg-white/35 light:text-zinc-600 light:hover:border-zinc-950/20 light:hover:bg-white/60 light:hover:text-zinc-950"
                 }
               >
                 {!isActive && (
