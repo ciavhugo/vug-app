@@ -3,18 +3,25 @@ import { connection } from "next/server";
 import {
   generateNotionPageSlug,
   getDatabaseItems,
-  parseDateDisplay,
   richTextRender,
 } from "@/lib/notion";
 import { PageContainer, BlogPostCard } from "@/components";
 import type { PostProps } from "@/types/notion.type";
 
-// The blog content comes from Notion, so this page should be rendered on demand on Vercel.
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export default async function PostsPage() {
+interface PostsPageProps {
+  searchParams?: Promise<{
+    tag?: string;
+  }>;
+}
+
+export default async function PostsPage({ searchParams }: PostsPageProps) {
   await connection();
+
+  const params = await searchParams;
+  const activeTag = params?.tag;
 
   const { results } = await getDatabaseItems<PostProps>({
     sorts: [
@@ -26,33 +33,95 @@ export default async function PostsPage() {
     },
   });
 
-  return (
-    <PageContainer className="flex flex-col items-center gap-20 px-6 py-6 w-full max-w-[705px] ">
-      {/* Header */}
-      <section className="flex flex-col gap-12 text-center max-w-2xl">
-        <h1 className="text-3xl font-semibold">Todas as Postagens</h1>
+  const allTags = Array.from(
+    new Map(
+      results
+        .flatMap((item) => item.properties.Tags.multi_select)
+        .map((tag) => [tag.name, tag]),
+    ).values(),
+  );
 
-        {/* <p className="text-gray-500">Aqui vai ser um parágrafo com introdução</p> */}
+  const filteredResults = activeTag
+    ? results.filter((item) =>
+        item.properties.Tags.multi_select.some((tag) => tag.name === activeTag),
+      )
+    : results;
+
+  return (
+    <PageContainer className="flex w-full max-w-[805px] flex-col items-center gap-12 px-6 py-6">
+      <section className="flex w-full flex-col gap-8 text-center">
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link
+            href="/blog"
+            className={
+              !activeTag
+                ? "group relative rounded-xl bg-gradient-to-br from-white to-zinc-100 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-black shadow-lg shadow-white/20 transition-all duration-300"
+                : "group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white"
+            }
+          >
+            <span className="relative">Todos</span>
+          </Link>
+
+          {allTags.map((tag) => {
+            const isActive = activeTag === tag.name;
+
+            return (
+              <Link
+                key={tag.id}
+                href={`/blog?tag=${encodeURIComponent(tag.name)}`}
+                className={
+                  isActive
+                    ? "group relative rounded-xl bg-gradient-to-br from-white to-zinc-100 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-black shadow-lg shadow-white/20 transition-all duration-300"
+                    : "group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-zinc-400 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white"
+                }
+              >
+                {!isActive && (
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                )}
+
+                <span className="relative">{tag.name}</span>
+              </Link>
+            );
+          })}
+        </div>
       </section>
 
-      {/* Content */}
-      <section className="flex w-full flex-col gap-10">
-        {results.map((item) => {
+      <section className="grid w-full max-w-[805px] gap-5 sm:grid-cols-2">
+        {filteredResults.map((item) => {
           const title = richTextRender(item.properties.Nome.title);
-          const description = richTextRender(item.properties.Descricao.rich_text);
+          const description = richTextRender(
+            item.properties.Descricao.rich_text,
+          );
           const tags = item.properties.Tags.multi_select;
-          const publishedIn = item.properties["Publicado Em"].date?.start as string;
+          const publishedIn = item.properties["Publicado Em"].date
+            ?.start as string;
 
           const slug = generateNotionPageSlug(item.url);
-          const dateDisplay = parseDateDisplay(publishedIn);
+
+          const dateDisplay = new Intl.DateTimeFormat("pt-BR", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })
+            .format(new Date(`${publishedIn}T00:00:00`))
+            .replace(" de ", " ")
+            .replace(" de ", " ");
+
+          const coverImage =
+            item.cover?.type === "external"
+              ? item.cover.external.url
+              : item.cover?.type === "file"
+                ? item.cover.file.url
+                : undefined;
 
           return (
-            <Link key={item.id} href={`/blog/${slug}`}>
+            <Link key={item.id} href={`/blog/${slug}`} className="group block">
               <BlogPostCard
                 title={title}
                 description={description}
                 date={dateDisplay}
                 tags={tags}
+                image={coverImage}
               />
             </Link>
           );

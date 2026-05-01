@@ -125,12 +125,7 @@ export type NotionPage<P extends NotionPropertiesSchema> = {
   last_edited_time: string
   created_by: NotionPageUserRef
   last_edited_by: NotionPageUserRef
-  cover: null | {
-    type: "external"
-    external: {
-      url: string
-    }
-  }
+  cover: NotionPageCover
   icon: NotionPageIcon
   parent: NotionPageParent
   archived: boolean
@@ -139,6 +134,22 @@ export type NotionPage<P extends NotionPropertiesSchema> = {
   public_url: string | null
   properties: P
 }
+
+export type NotionPageCover =
+  | {
+      type: "external"
+      external: {
+        url: string
+      }
+    }
+  | {
+      type: "file"
+      file: {
+        url: string
+        expiry_time: string
+      }
+    }
+  | null
 
 export type NotionPageIcon = NotionPageIconEmoji | null
 
