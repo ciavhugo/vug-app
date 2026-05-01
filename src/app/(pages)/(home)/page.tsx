@@ -3,7 +3,7 @@ import { ProjectCard } from "@/components/frames/ProjectCard";
 export default function Home() {
   return (
     <section className="w-full max-w-[800px] mx-auto">
-      <div className="max-w-[580px] mt-24">
+      <div className="max-w-[580px] mt-7">
         <p className="font-medium text-[28px] max-[550px]:text-[16px]">
           <span className="relative">
           Victor Machado

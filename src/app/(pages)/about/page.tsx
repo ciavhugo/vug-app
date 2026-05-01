@@ -18,7 +18,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className="w-full max-w-[800px] mx-auto min-h-screen flex flex-col mt-28">
+    <section className="w-full max-w-[800px] mx-auto min-h-screen flex flex-col mt-7">
       {/* About me */}
       <section className="flex gap-12 max-[650px]:text-[14px]">
         <h1 className="w-24 text-[#A1A09A]">Sobre</h1>
