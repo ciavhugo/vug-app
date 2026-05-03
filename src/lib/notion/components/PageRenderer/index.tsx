@@ -1,6 +1,7 @@
 import * as React from "react"
 import style from "./style.module.css"
 import { richTextRender } from "../RichTextRender"
+import { ZoomableImage } from "../ZoomableImage"
 
 // TIPOS (reaproveita sua base + fallback)
 type BaseBlock = {
@@ -273,7 +274,7 @@ function Block({ block, ctx, overrides }: { block: BaseBlock; ctx: Ctx; override
       return (
         <figure style={{ marginInline: "auto", borderRadius: "12px", overflow: "hidden" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={alt} />
+          <ZoomableImage src={src} alt={alt} />
           {caption?.length ? <figcaption>{ctx.richTextRender(caption)}</figcaption> : null}
         </figure>
       )
