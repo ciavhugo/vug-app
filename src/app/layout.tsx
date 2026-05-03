@@ -51,6 +51,7 @@ export default function RootLayout({
             gtag('config', 'G-TFKV7KDCV0');
           `}
         </Script>
+        <link rel="icon" href="/favicon.svg" />
       </head>
 
       <body
