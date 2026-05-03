@@ -56,6 +56,8 @@ export function ProjectCard({
           <img
             src={imageUrl}
             alt={title}
+            loading="eager"
+            decoding="async"
             className="
     w-full 
     h-auto 
