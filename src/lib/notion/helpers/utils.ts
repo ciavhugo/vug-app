@@ -21,7 +21,7 @@ export const parseDateDisplay = <T extends string | undefined>(dateString: T, ti
 
   return new Date(dateString).toLocaleDateString("pt-BR", {
     day: "2-digit",
-    month: "long",
+    month: "short",
     year: "numeric",
     timeZone,
   }) as any

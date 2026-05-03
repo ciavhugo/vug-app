@@ -1,10 +1,13 @@
 /* Wrapper opcional para escopo (use <div class="notion"> ... ) */
 .rendered {
-  --nt-text: white;
-  --nt-muted: #6b6f76;
-  --nt-border: rgb(55, 55, 55);
-  --nt-code-bg: rgb(45, 45, 45);
-  --nt-quote-bg: rgb(45, 45, 45);
+  --nt-text: #d4d4d8;
+  --nt-heading: #f4f4f5;
+  --nt-muted: #8a8f98;
+  --nt-border: rgb(63, 63, 70);
+  --nt-link: #e4e4e7;
+  --nt-code-bg: rgb(24, 24, 27);
+  --nt-code-border: rgb(63, 63, 70);
+  --nt-quote-bg: rgba(255, 255, 255, 0.035);
 
   --nt-gray: #9b9a97;
   --nt-brown: #7a5a41;
@@ -29,111 +32,142 @@
 
 .rendered {
   color: var(--nt-text);
-  line-height: 1.6;
-
+  font-size: 18px;
+  line-height: 1.78;
   display: flex;
   flex-direction: column;
-  /* gap: 16px; */
+  gap: 0;
+}
+
+:global(.light) .rendered {
+  --nt-text: #3f3f46;
+  --nt-heading: #18181b;
+  --nt-muted: #71717a;
+  --nt-border: rgb(228, 228, 231);
+  --nt-link: #18181b;
+  --nt-code-bg: rgba(24, 24, 27, 0.055);
+  --nt-code-border: rgba(24, 24, 27, 0.1);
+  --nt-quote-bg: rgba(24, 24, 27, 0.035);
 }
 
 /* ------ */
 
 /* Tipografia básica */
 .rendered h1 {
-  font-size: 1.8rem;
-  line-height: 1.25;
-  margin: 1em 0 .5em;
+  color: var(--nt-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.16;
+  margin: 2.2em 0 .7em;
 }
 
 .rendered h2 {
-  font-size: 1.4rem;
-  line-height: 1.25;
-  margin: 1em 0 .5em;
+  color: var(--nt-heading);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.22;
+  margin: 2.1em 0 .65em;
 }
 
 .rendered h3 {
-  font-size: 1.15rem;
-  line-height: 1.25;
-  margin: .75em 0 .4em;
+  color: var(--nt-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.32;
+  margin: 1.8em 0 .55em;
 }
 
 .rendered p {
-  margin: .2em 0;
+  margin: 0 0 1.15em;
 }
 
 /* Listas */
 .rendered ul, .rendered ol {
-  margin: .4em 0 .4em 1.3em;
-  padding: 0;
+  margin: .35em 0 1.35em 1.25em;
+  padding-left: 1em;
 }
 
 .rendered li {
-  margin: .25em 0;
+  margin: .45em 0;
+  padding-left: .25em;
 }
 
 /* Blockquote */
 .rendered blockquote {
-  margin: 1em 0;
-  padding: .5em .9em;
-  border-left: 3px solid var(--nt-border);
+  margin: 1.6em 0;
+  padding: 1em 1.2em;
+  border-left: 2px solid var(--nt-heading);
   background: var(--nt-quote-bg);
   color: var(--nt-text);
+  font-size: 1.02em;
 }
 
 /* Divider */
 .rendered hr {
   border: 0;
   border-top: 1px solid var(--nt-border);
-  margin: 1.25em 0;
+  margin: 2.25em 0;
 }
 
 /* Code inline & block */
 .rendered code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: .95em;
+  font-size: .86em;
   background: var(--nt-code-bg);
-  padding: .15em .5em;
-  border-radius: .5rem;
+  border: 1px solid var(--nt-code-border);
+  padding: .14em .42em;
+  border-radius: .375rem;
 }
 
 .rendered pre {
   overflow-x: auto;
-  padding: 1.5em;
+  margin: 1.5em 0;
+  padding: 1.2em;
   background: var(--nt-code-bg);
-  border: 1px solid var(--nt-border);
+  border: 1px solid var(--nt-code-border);
   border-radius: .75rem;
+  line-height: 1.65;
+}
+
+.rendered pre code {
+  border: 0;
+  padding: 0;
+  background: transparent;
 }
 
 /* Imagens */
 .rendered figure {
-  margin: 1em 0;
+  margin: 1.8em 0;
 }
 
 .rendered img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: .9rem;
 }
 
 .rendered figcaption {
   color: var(--nt-muted);
-  font-size: .9em;
-  margin-top: .4em;
+  font-size: .82em;
+  line-height: 1.45;
+  margin-top: .65em;
+  text-align: center;
 }
 
 /* Callout */
 .rendered [role="note"] {
-  padding: .7em .9em;
+  padding: 1em 1.1em;
   border: 1px solid var(--nt-border);
-  border-left: 4px solid currentColor;
-  border-radius: .5rem;
-  background: #fff;
-  margin: 1em 0;
+  border-left: 3px solid currentColor;
+  border-radius: .75rem;
+  background: var(--nt-quote-bg);
+  margin: 1.5em 0;
 }
 
 /* Toggle (details) */
 .rendered details {
-  margin: .6em 0;
+  margin: .8em 0 1.2em;
 }
 
 .rendered summary {
@@ -142,12 +176,29 @@
 
 /* Links */
 .rendered a {
-  color: var(--nt-blue);
-  text-decoration: none;
+  color: var(--nt-link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--nt-link) 35%, transparent);
+  text-underline-offset: .18em;
 }
 
 .rendered a:hover {
-  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 640px) {
+  .rendered {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .rendered h1 {
+    font-size: 1.8rem;
+  }
+
+  .rendered h2 {
+    font-size: 1.45rem;
+  }
 }
 
 /* Cores de texto */
