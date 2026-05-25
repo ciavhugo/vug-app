@@ -57,13 +57,14 @@ export default function RootLayout({
       <body
         className={`${fontInter.variable} ${robotoMono.variable} min-h-screen overflow-x-hidden bg-background text-foreground antialiased selection:bg-white selection:text-black light:selection:bg-zinc-950 light:selection:text-white select-none [user-select:none] [webkit-user-drag:none]`}
       >
+
         <div
           aria-hidden="true"
           className="fixed inset-0 z-[-2] overflow-hidden bg-[radial-gradient(circle_at_top,#18181b_0%,#0c0c0c_42%,#050505_100%)] light:bg-[radial-gradient(circle_at_top,#ffffff_0%,#f6f4ef_46%,#ece7dd_100%)]"
         >
-          <div className="absolute -top-36 -left-32 h-96 w-96 rounded-full bg-violet-500/20 blur-3xl light:bg-violet-300/25" />
-          <div className="absolute -top-20 right-[-7rem] h-80 w-80 rounded-full bg-fuchsia-500/15 blur-3xl light:bg-fuchsia-300/20" />
-          <div className="absolute top-[15px] left-[38%] h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl light:bg-cyan-300/20" />
+          <div className="absolute -top-36 -left-32 h-96 w-96 rounded-full bg-white/[0.06] blur-3xl light:bg-violet-300/25" />
+          <div className="absolute -top-20 right-[-7rem] h-80 w-80 rounded-full bg-white/[0.06] blur-3xl light:bg-fuchsia-300/20" />
+          <div className="absolute top-[15px] left-[38%] h-80 w-80 -translate-x-1/2 rounded-full white/[0.06] blur-3xl light:bg-cyan-300/20" />
           <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-white/[0.06] to-transparent light:from-white/70" />
           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#0c0c0c] to-transparent light:from-[#f6f4ef]" />
         </div>
