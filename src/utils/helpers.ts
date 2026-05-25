@@ -1,5 +1,5 @@
-export function classMerge(array: any[]): string {
-  return array
-    .filter((value: any) => value)
+export function classMerge(values: Array<string | false | null | undefined>): string {
+  return values
+    .filter(Boolean)
     .join(" ")
 }

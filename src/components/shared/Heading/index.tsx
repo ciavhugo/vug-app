@@ -1,7 +1,7 @@
 import "./style.scss"
 
-export type HeadingSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl"
-export type HeadingColor = "white" | "gray"
+type HeadingSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl"
+type HeadingColor = "white" | "gray"
 
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   children?: React.ReactNode

@@ -1,5 +1,4 @@
 import { notion } from "@/lib/notion"
-import type { NotionRichTextNode } from "../pages/types"
 import type { AnyNotionBlock, BlockChildrenResponse, GetBlockChildrenOptions } from "./types"
 
 // ------------------------------
@@ -12,7 +11,7 @@ import type { AnyNotionBlock, BlockChildrenResponse, GetBlockChildrenOptions } f
  *
  * Doc: Retrieve block children (cursor-based pagination).
  */
-export async function getBlockChildren<T extends AnyNotionBlock = AnyNotionBlock>(
+async function getBlockChildren<T extends AnyNotionBlock = AnyNotionBlock>(
   blockId: string,
   { pageSize = 100, startCursor }: GetBlockChildrenOptions = {},
 ): Promise<BlockChildrenResponse<T>> {
@@ -72,10 +71,3 @@ export async function getAllBlockChildren<T extends AnyNotionBlock = AnyNotionBl
   return acc
 }
 
-// ------------------------------
-// Utilidades para render (ex.: transformar rich_text em string)
-// ------------------------------
-
-export function richTextToPlain(nodes: NotionRichTextNode[]): string {
-  return nodes.map(n => n.plain_text).join("")
-}

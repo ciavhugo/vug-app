@@ -2,8 +2,8 @@ import { CSSProperties } from "react"
 import { classMerge } from "@/utils/helpers"
 import "./style.css"
 
-export type ParagraphSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl"
-export type ParagraphColor = "white" | "gray"
+type ParagraphSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl"
+type ParagraphColor = "white" | "gray"
 
 export interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
   children?: React.ReactNode

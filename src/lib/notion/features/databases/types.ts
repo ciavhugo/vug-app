@@ -52,7 +52,7 @@ type CheckboxOps = { op: "equals" | "does_not_equal"; value?: boolean }
 type StatusOps = SelectOps // na API filtra como select
 
 // Para cada tipo, o valor/shape adequado
-export type PropFilter =
+type PropFilter =
   | { property: string; type: "title" | "rich_text"; value?: string; } & TextOps
   | { property: string; type: "select"; } & SelectOps
   | { property: string; type: "multi_select"; } & MultiOps
@@ -63,7 +63,7 @@ export type PropFilter =
   // fallback para casos não mapeados ainda: você pode passar um objeto "bruto"
   | { raw: any }
 
-export type LogicNode = { and: QueryFilter[] } | { or: QueryFilter[] }
+type LogicNode = { and: QueryFilter[] } | { or: QueryFilter[] }
 
 export type QueryFilter = LogicNode | PropFilter
 
@@ -82,7 +82,7 @@ type LiftPropFilterToSchema<P extends NotionPropertiesSchema> =
     : never)
 
 // Para conveniência:
-export type WhereFor<P extends NotionPropertiesSchema> =
+type WhereFor<P extends NotionPropertiesSchema> =
   | LiftPropFilterToSchema<P>
   | LiftPropFilterToSchema<P>[]
 
@@ -92,17 +92,12 @@ export type WhereFor<P extends NotionPropertiesSchema> =
 // ------------------------------
 
 // Direção do sort (oficial Notion)
-export type NotionSortDirection = "ascending" | "descending"
+type NotionSortDirection = "ascending" | "descending"
 
 // Timestamps suportados pelo sort
-export type NotionSortTimestamp = "created_time" | "last_edited_time"
-
-// Sort genérico por propriedade OU por timestamp
-export type NotionSort =
-  | { property: string; direction: NotionSortDirection }
-  | { timestamp: NotionSortTimestamp; direction: NotionSortDirection }
+type NotionSortTimestamp = "created_time" | "last_edited_time"
 
 // Variante “esperta”: amarra o nome da property ao schema das suas páginas
-export type NotionSortFor<P extends NotionPropertiesSchema> =
+type NotionSortFor<P extends NotionPropertiesSchema> =
   | { property: Extract<keyof P, string>; direction: NotionSortDirection }
   | { timestamp: NotionSortTimestamp; direction: NotionSortDirection }

@@ -19,7 +19,7 @@ type NotionBlockBase = {
 };
 
 // Alguns tipos mais comuns para posts de blog
-export type ParagraphBlock = NotionBlockBase & {
+type ParagraphBlock = NotionBlockBase & {
   type: "paragraph";
   paragraph: {
     rich_text: NotionRichTextNode[];
@@ -27,7 +27,7 @@ export type ParagraphBlock = NotionBlockBase & {
   };
 };
 
-export type Heading1Block = NotionBlockBase & {
+type Heading1Block = NotionBlockBase & {
   type: "heading_1";
   heading_1: {
     rich_text: NotionRichTextNode[];
@@ -35,7 +35,7 @@ export type Heading1Block = NotionBlockBase & {
     color: string;
   };
 };
-export type Heading2Block = NotionBlockBase & {
+type Heading2Block = NotionBlockBase & {
   type: "heading_2";
   heading_2: {
     rich_text: NotionRichTextNode[];
@@ -43,7 +43,7 @@ export type Heading2Block = NotionBlockBase & {
     color: string;
   };
 };
-export type Heading3Block = NotionBlockBase & {
+type Heading3Block = NotionBlockBase & {
   type: "heading_3";
   heading_3: {
     rich_text: NotionRichTextNode[];
@@ -52,7 +52,7 @@ export type Heading3Block = NotionBlockBase & {
   };
 };
 
-export type BulletedListItemBlock = NotionBlockBase & {
+type BulletedListItemBlock = NotionBlockBase & {
   type: "bulleted_list_item";
   bulleted_list_item: {
     rich_text: NotionRichTextNode[];
@@ -61,7 +61,7 @@ export type BulletedListItemBlock = NotionBlockBase & {
   };
 };
 
-export type NumberedListItemBlock = NotionBlockBase & {
+type NumberedListItemBlock = NotionBlockBase & {
   type: "numbered_list_item";
   numbered_list_item: {
     rich_text: NotionRichTextNode[];
@@ -69,7 +69,7 @@ export type NumberedListItemBlock = NotionBlockBase & {
   };
 };
 
-export type QuoteBlock = NotionBlockBase & {
+type QuoteBlock = NotionBlockBase & {
   type: "quote";
   quote: {
     rich_text: NotionRichTextNode[];
@@ -77,7 +77,7 @@ export type QuoteBlock = NotionBlockBase & {
   };
 };
 
-export type CalloutBlock = NotionBlockBase & {
+type CalloutBlock = NotionBlockBase & {
   type: "callout";
   callout: {
     rich_text: NotionRichTextNode[];
@@ -86,7 +86,7 @@ export type CalloutBlock = NotionBlockBase & {
   };
 };
 
-export type CodeBlock = NotionBlockBase & {
+type CodeBlock = NotionBlockBase & {
   type: "code";
   code: {
     rich_text: NotionRichTextNode[];
@@ -95,7 +95,7 @@ export type CodeBlock = NotionBlockBase & {
   };
 };
 
-export type ImageBlock = NotionBlockBase & {
+type ImageBlock = NotionBlockBase & {
   type: "image";
   image: (
     | { type: "external"; external: { url: string }; caption: NotionRichTextNode[] }
@@ -103,7 +103,7 @@ export type ImageBlock = NotionBlockBase & {
   );
 };
 
-export type DividerBlock = NotionBlockBase & { type: "divider"; divider: object };
+type DividerBlock = NotionBlockBase & { type: "divider"; divider: object };
 
 export type AnyNotionBlock =
   | ParagraphBlock

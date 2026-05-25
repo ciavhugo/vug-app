@@ -29,8 +29,3 @@ export async function getDatabaseItems<T extends NotionPropertiesSchema>(
   }
 }
 
-export async function getDatabaseProps<T extends NotionPropertiesSchema>(
-): Promise<NotionPage<T>> {
-  const db = await notion.databases.retrieve({ database_id: databaseId }) as any
-  return db as NotionPage<T>
-}

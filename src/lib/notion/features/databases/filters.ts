@@ -86,7 +86,7 @@ function isEmptyString(v: unknown) {
 }
 
 function cleanStrArray(arr?: (string | undefined)[]) {
-  if (!Array.isArray) return []
+  if (!Array.isArray(arr)) return []
   return (arr ?? []).filter((s) => typeof s === "string" && s.trim() !== "")
 }
 

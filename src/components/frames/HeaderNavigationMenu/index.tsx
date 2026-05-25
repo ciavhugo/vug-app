@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,34 +14,17 @@ export function HeaderNavigationMenu() {
 
   return (
     <section className="relative mt-4 flex h-[60px] w-full max-w-[805px] items-center justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] px-4 backdrop-blur-md">
-      {/* <Link
-        href="/"
-        aria-label="Ir para a página inicial"
-        className="relative hidden h-12 w-12 shrink-0 items-center justify-center sm:flex"
-      >
-        <Image
-          src="/VictorMachado.svg"
-          alt="VM"
-          width={48}
-          height={48}
-          className="h-12 w-12"
-          priority
-        />
-      </Link> */}
-
       <Link
         href="/"
         aria-label="Go to homepage"
         className="flex items-center gap-2 group cursor-pointer"
       >
-        {/* Logo com glow */}
         <img
           src="/asterisk.svg"
           alt="asterisk"
           className="w-3.5 h-3.5 opacity-80 animate-spin"
         />
 
-        {/* Nome */}
         <span className="font-bold tracking-widest text-zinc-900 dark:text-white uppercase text-sm hidden sm:block">
           Victor Machado
         </span>

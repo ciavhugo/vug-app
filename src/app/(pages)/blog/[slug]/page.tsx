@@ -3,7 +3,6 @@ import {
   PageContainer,
   Paragraph,
   Span,
-  Tags,
 } from "@/components"
 import { connection } from "next/server"
 import {
@@ -22,7 +21,6 @@ interface PostPageProps {
   }>
 }
 
-// The post content comes from Notion, so this page should be rendered on demand on Vercel.
 export const dynamic = "force-dynamic"
 export const revalidate = 0
 
@@ -121,7 +119,6 @@ export default async function PostPage({ params }: PostPageProps) {
                 </Paragraph>
               ) : null}
             </div>
-            
           </div>
         </header>
 
@@ -130,21 +127,6 @@ export default async function PostPage({ params }: PostPageProps) {
     </PageContainer>
   )
 }
-
-type NotionCover =
-  | {
-      type: "external"
-      external: {
-        url: string
-      }
-    }
-  | {
-      type: "file"
-      file: {
-        url: string
-      }
-    }
-  | null
 
 type NotionBlock = {
   type: string

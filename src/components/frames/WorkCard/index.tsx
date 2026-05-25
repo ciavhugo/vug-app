@@ -41,10 +41,10 @@ export function WorkCard({
 
       {(initialDate || finalDate) && (
         <div className="ml-auto text-sm text-[#A1A09A] max-[550px]:hidden">
-  <span>{initialDate}</span>
-  {finalDate && <span className="mx-1">—</span>}
-  {finalDate && <span>{finalDate}</span>}
-</div>
+          <span>{initialDate}</span>
+          {finalDate && <span className="mx-1">—</span>}
+          {finalDate && <span>{finalDate}</span>}
+        </div>
       )}
     </div>
   );

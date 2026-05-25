@@ -78,7 +78,7 @@ export type NotionMultiSelectProperty<Option extends string = string> = {
   }
 }
 
-export type NotionFilesProperty = {
+type NotionFilesProperty = {
   id: string
   type: "files"
   files: Array<
@@ -100,7 +100,7 @@ export type NotionFilesProperty = {
   >
 }
 
-export type NotionAnyProperty =
+type NotionAnyProperty =
   | NotionTitleProperty
   | NotionRichTextProperty
   | NotionDateProperty
@@ -135,7 +135,7 @@ export type NotionPage<P extends NotionPropertiesSchema> = {
   properties: P
 }
 
-export type NotionPageCover =
+type NotionPageCover =
   | {
       type: "external"
       external: {
@@ -151,19 +151,19 @@ export type NotionPageCover =
     }
   | null
 
-export type NotionPageIcon = NotionPageIconEmoji | null
+type NotionPageIcon = NotionPageIconEmoji | null
 
-export type NotionPageIconEmoji = {
+type NotionPageIconEmoji = {
   type: "emoji"
   emoji: string
 }
 
-export type NotionPageParent = {
+type NotionPageParent = {
   type: "database_id"
   database_id: string
 }
 
-export type NotionPageUserRef = {
+type NotionPageUserRef = {
   object: "user"
   id: string
 }
