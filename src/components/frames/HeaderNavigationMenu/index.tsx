@@ -36,19 +36,15 @@ export function HeaderNavigationMenu() {
         className="flex items-center gap-2 group cursor-pointer"
       >
         {/* Logo com glow */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-black dark:bg-white border-8 blur-lg opacity-0 group-hover:opacity-10 transition duration-500"></div>
-
-          <div className="h-8 w-8 bg-zinc-100 dark:bg-white/10 border border-zinc-200 dark:border-white/20 flex items-center justify-center transition-all duration-700 ease-in-out">
-            <span className="text-sm font-mono font-bold text-zinc-900 dark:text-white">
-              VM
-            </span>
-          </div>
-        </div>
+        <img
+          src="/asterisk.svg"
+          alt="asterisk"
+          className="w-3.5 h-3.5 opacity-80 animate-spin"
+        />
 
         {/* Nome */}
         <span className="font-bold tracking-widest text-zinc-900 dark:text-white uppercase text-sm hidden sm:block">
-          NAMEVUG
+          Victor Machado
         </span>
       </Link>
 
@@ -60,11 +56,23 @@ export function HeaderNavigationMenu() {
             <Link
               key={href}
               href={href}
-              className={`${cursorClass} rounded-xl px-4 py-2 font-mono tracking-normal transition-all duration-300 ${
-                isActive
-                  ? "bg-white/[0.08] text-cyan-200 shadow-sm shadow-cyan-500/10"
-                  : "text-zinc-400 hover:bg-white/[0.05] hover:text-zinc-100"
-              }`}
+              className={`
+    ${cursorClass}
+    inline-flex items-center justify-center
+    rounded-md
+    border border-white/10
+    px-4 py-2
+    text-sm font-medium
+    transition-colors duration-200
+    focus-visible:outline-none
+    focus-visible:ring-1 focus-visible:ring-cyan-400
+    disabled:pointer-events-none disabled:opacity-50
+    ${
+      isActive
+        ? "bg-white/[0.08] text-zinc-950"
+        : "bg-transparent text-zinc-400 hover:bg-white/[0.05] hover:text-zinc-100"
+    }
+  `}
             >
               {label}
             </Link>
