@@ -4,22 +4,48 @@ export default function Home() {
   return (
     <section className="w-full max-w-[800px] mx-auto">
       <div className="max-w-[580px] mt-7">
-        <p className="font-medium text-[28px] max-[550px]:text-[16px]">
-          <span className="relative inline-block">
-            Victor Machado
-            <span className="absolute -top-1 -right-4 max-[550px]:-top-0.5 max-[550px]:-right-2">
-              <img
-                src="/asterisk.svg"
-                alt="asterisk"
-                className="w-3 h-7 max-[550px]:w-2 max-[550px]:h-3 animate-spin"
-              />
-            </span>
-          </span>
-        </p>
+        <div className="mb-5">
+          {/* <img
+            src="https://avatars.githubusercontent.com/u/182302815?v=4"
+            alt="Victor Hugo"
+            className="
+           h-50 w-50
+    max-[550px]:h-30
+    max-[550px]:w-30
+          rounded-full
+          border border-white/10
+          object-cover
+          bg-zinc-900
+        "
+          /> */}
+          <div className="relative h-52 w-52 max-[550px]:h-32 max-[550px]:w-32">
+  {/* Shape atrás */}
+  <div className="absolute inset-0 rotate-6 rounded-3xl border border-white/10 transition-all duration-700" />
+
+  <div className="absolute inset-0 -rotate-6 rounded-3xl border border-white/10 transition-all duration-700" />
+
+  {/* Foto */}
+  <img
+    src="https://avatars.githubusercontent.com/u/182302815?v=4"
+    alt="Victor Hugo"
+    className="
+      relative z-10
+      h-full w-full
+      rounded-full
+      border border-white/10
+      object-cover
+      bg-zinc-900
+    "
+  />
+
+  
+</div>
+        </div>
 
         <p className="text-[#fafafa] text-[18px] max-[550px]:text-[14px] max-[420px]:max-w-[350px] mt-2.5">
-          Construindo uma marca streetwear, aprofundando minha base em
-          desenvolvimento de sistemas e evoluindo com consistência.
+          Entre moda, tecnologia e direção criativa, construo projetos com
+          identidade e visão de longo prazo, enquanto compartilho aprendizados,
+          experiências e reflexões através de artigos no meu blog.
         </p>
       </div>
 
